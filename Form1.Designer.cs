@@ -29,69 +29,54 @@
             /// </summary>
             private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.Number = new System.Windows.Forms.Label();
+            this.Width_Bar = new System.Windows.Forms.TrackBar();
             this.Line = new System.Windows.Forms.Button();
             this.BrokenLine = new System.Windows.Forms.Button();
             this.Pen = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ChangeColor = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выйтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.canvas = new System.Windows.Forms.PictureBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Width_Bar)).BeginInit();
             this.panel2.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.Number);
+            this.panel1.Controls.Add(this.Width_Bar);
             this.panel1.Controls.Add(this.Line);
             this.panel1.Controls.Add(this.BrokenLine);
             this.panel1.Controls.Add(this.Pen);
-            this.panel1.Location = new System.Drawing.Point(12, 44);
+            this.panel1.Location = new System.Drawing.Point(15, 34);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(258, 216);
             this.panel1.TabIndex = 1;
             // 
-            // label1
+            // Number
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(123, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.Number.AutoSize = true;
+            this.Number.Location = new System.Drawing.Point(151, 46);
+            this.Number.Name = "Number";
+            this.Number.Size = new System.Drawing.Size(13, 13);
+            this.Number.TabIndex = 5;
+            this.Number.Text = "5";
             // 
-            // button5
+            // Width_Bar
             // 
-            this.button5.Location = new System.Drawing.Point(15, 165);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "button1";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(15, 127);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "button1";
-            this.button4.UseVisualStyleBackColor = true;
+            this.Width_Bar.Location = new System.Drawing.Point(122, 14);
+            this.Width_Bar.Minimum = 1;
+            this.Width_Bar.Name = "Width_Bar";
+            this.Width_Bar.Size = new System.Drawing.Size(104, 45);
+            this.Width_Bar.TabIndex = 5;
+            this.Width_Bar.TickFrequency = 2;
+            this.Width_Bar.Value = 5;
+            this.Width_Bar.Scroll += new System.EventHandler(this.Width_Bar_Click);
             // 
             // Line
             // 
@@ -152,47 +137,10 @@
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.менюToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1154, 24);
-            this.menuStrip1.TabIndex = 3;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // менюToolStripMenuItem
-            // 
-            this.менюToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.сохранитьToolStripMenuItem,
-            this.выйтиToolStripMenuItem});
-            this.менюToolStripMenuItem.Name = "менюToolStripMenuItem";
-            this.менюToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.менюToolStripMenuItem.Text = "Меню";
-            // 
-            // сохранитьToolStripMenuItem
-            // 
-            this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-            this.сохранитьToolStripMenuItem.Text = "Сохранить";
-            // 
-            // выйтиToolStripMenuItem
-            // 
-            this.выйтиToolStripMenuItem.Name = "выйтиToolStripMenuItem";
-            this.выйтиToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
-            this.выйтиToolStripMenuItem.Text = "Выйти";
-            // 
-            // imageList1
-            // 
-            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            // 
             // canvas
             // 
             this.canvas.BackColor = System.Drawing.SystemColors.Control;
-            this.canvas.Location = new System.Drawing.Point(303, 44);
+            this.canvas.Location = new System.Drawing.Point(303, 34);
             this.canvas.Name = "canvas";
             this.canvas.Size = new System.Drawing.Size(839, 526);
             this.canvas.TabIndex = 4;
@@ -214,39 +162,30 @@
             this.Controls.Add(this.canvas);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.menuStrip1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Width_Bar)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem менюToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem выйтиToolStripMenuItem;
-        private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.PictureBox canvas;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button Line;
         private System.Windows.Forms.Button BrokenLine;
         private System.Windows.Forms.Button Pen;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button ChangeColor;
         private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Label Number;
+        public System.Windows.Forms.TrackBar Width_Bar;
         //private System.Windows.Forms.mous
     }
 }

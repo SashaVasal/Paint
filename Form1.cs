@@ -16,32 +16,34 @@ namespace Graph
         int count = 1;
         
         Bitmap bit;
+        Color _color = Color.Black;
+       
         float x1 = 0, y1 = 0;
-        int q = 1;
-        Pen pen = new Pen(Color.Black);
+        int CheckClick = 1;
+        int width_pen = 5;
+        Pen pen = new Pen(Color.Black,5);
         public Form1()
         {
-            bit = new Bitmap(1000, 1000);
+            bit = new Bitmap(1000,1000);
             x1 = y1 = 0;
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-       
-
+        private void Form1_Load(object sender, EventArgs e){}  
         private void Canvas_MouseMove(object sender, MouseEventArgs e)
         {
-            if(count == 1)
+            
+            if (count == 1)
             {
                 
                 Graphics g;
                 g = Graphics.FromImage(bit);
                 if (e.Button == MouseButtons.Left)
                 {
+                    int weight_pen = width_pen / 3;
+                    g.DrawLine(pen, x1+ weight_pen, y1+ weight_pen, e.X+ weight_pen, e.Y+ weight_pen);
+                    g.DrawLine(pen, x1, y1+ weight_pen, e.X, e.Y+ weight_pen);
+                    g.DrawLine(pen, x1+ weight_pen, y1, e.X+ weight_pen, e.Y);
                     g.DrawLine(pen, x1, y1, e.X, e.Y);
                     canvas.Image = bit;
                 }
@@ -51,35 +53,24 @@ namespace Graph
             
         }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        public void Canvas_Mouse_Move(object sender, MouseEventArgs e)
-        {
-            
-        }
+     
         public void PenClick(object sender, EventArgs e)
         {
             count = 1;
-            q = 1;
+            CheckClick = 1;
         }
 
         private void Canvas_MouseDown(object sender, MouseEventArgs e)
         {
             if (count == 2)
             {
-                if(q == -1)
-                {
-                    
+                if(CheckClick == -1)
+                {                 
                     Graphics g;
                     g = Graphics.FromImage(bit);
-
                     if (e.Button == MouseButtons.Left)
                     {
-
-                        g.DrawLine(pen, x1, y1, e.X, e.Y);
+                        g.DrawLine(pen, x1, y1, e.X, e.Y);                       
                         canvas.Image = bit;
                         x1 = e.X;
                         y1 = e.Y;
@@ -89,14 +80,12 @@ namespace Graph
                 {
                     x1 = e.X;
                     y1 = e.Y;
-                    q *= (-1);
+                    CheckClick *= (-1);
                 }
-            }
-            
-
+            }           
             if (count == 3)
             {
-                if (q == -1)
+                if (CheckClick == -1)
                 {                  
                     Graphics g;
                     g = Graphics.FromImage(bit);
@@ -105,21 +94,21 @@ namespace Graph
                         g.DrawLine(pen, x1, y1, e.X, e.Y);
                         canvas.Image = bit;
                     }
-                    q *= (-1);
+                    CheckClick *= (-1);
                 }
                 else
                 {
                     x1 = e.X;
                     y1 = e.Y;
-                    q *= (-1);
+                    CheckClick *= (-1);
                 }
+                
             }            
-        }
-     
+        }    
         public void BrokenClick(object sender, EventArgs e)
         {
             count = 2;
-            q = 1;
+            CheckClick = 1;
         }
 
         private void ChangeColor_Click(object sender, EventArgs e)
@@ -127,15 +116,23 @@ namespace Graph
             
             if (colorDialog1.ShowDialog() == DialogResult.Cancel)
                  return;
-  
-            pen = new Pen(colorDialog1.Color);
+            _color = colorDialog1.Color;
+            pen = new Pen(_color, width_pen);
 
+        }   
+        private void Width_Bar_Click(object sender, EventArgs e)
+        {
+
+            width_pen = Width_Bar.Value; 
+            
+            Number.Text = Convert.ToString(Width_Bar.Value);
+            pen = new Pen(_color, width_pen);
         }
 
         private void LineClick(object sender, EventArgs e)
         {
             count = 3;
-            q = 1;
+            CheckClick = 1;
         }
     }
 }
